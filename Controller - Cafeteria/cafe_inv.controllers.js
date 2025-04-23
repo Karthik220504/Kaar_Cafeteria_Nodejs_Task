@@ -54,7 +54,7 @@ const update_Product = async (req, res) => {
 const deleteProduct = async (req, res) => {
     try {
         const {id} = req.params;
-       const product =  await Product.findOneAndDelete({product_id : id});
+       const product =  await Cafe_Inventory.findOneAndDelete({product_id : id});
         if(!product){
           return res.status(404).json({message: "Product not found"});
         }
