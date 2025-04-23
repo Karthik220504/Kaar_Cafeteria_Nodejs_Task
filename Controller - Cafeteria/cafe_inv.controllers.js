@@ -42,7 +42,7 @@ const update_Product = async (req, res) => {
         if(!product){
           return res.status(404).json({message: "Product not found"});
         }
-        const updatedProduct = await Cafe_Inventory.findById(name);
+        const updatedProduct = await Cafe_Inventory.find({product_id : id});
         res.status(200).json(updatedProduct);
       } catch (error) {
         res.status(500).json({message: error.message})
